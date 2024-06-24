@@ -16,7 +16,7 @@ import pandas as pd
 # Page config
 st.set_page_config(
     page_title="Failure Classifier",
-    page_icon="images/icone.png",
+    page_icon="images/icon.png",
 )
 
 # Page title
@@ -31,7 +31,7 @@ st.markdown(
 )
 
 # Load the model
-with open('/content/model.pkl', 'rb') as model_file:
+with open('model/model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Streamlit interface to input data
