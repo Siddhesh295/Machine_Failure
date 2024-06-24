@@ -16,12 +16,12 @@ import pandas as pd
 # Page config
 st.set_page_config(
     page_title="Failure Classifier",
-    page_icon="/content/icon.png",
+    page_icon="images/icone.png",
 )
 
 # Page title
 st.title('Maintenance - Failure Prediction')
-st.image('/content/machine prediction.jpg')
+st.image('images/maintenance.jpg')
 st.write("\n\n")
 
 st.markdown(
