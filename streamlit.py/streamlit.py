@@ -32,7 +32,7 @@ st.markdown(
 
 # Load the model
 with open('Model/model.pkl', 'rb') as model_file:
-    Model = pickle.load(model_file)
+     model = pickle.load(model_file)
 
 # Streamlit interface to input data
 col1, col2 = st.columns(2)
