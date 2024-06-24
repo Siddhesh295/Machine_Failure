@@ -20,19 +20,19 @@ st.set_page_config(
 )
 
 # Page title
-st.title('Maintenance - Failure Prediction')
+st.title('Machine - Failure Prediction')
 st.image('images/maintenance.jpg')
 st.write("\n\n")
 
 st.markdown(
     """
-    This app aims to assist in classifying failures, thereby reducing the time required to analyze machine problems. It enables the analysis of sensor data to classify failures swiftly and expedite the troubleshooting process.
+   This application facilitates the rapid classification of machine failures using sensor data, expediting the troubleshooting process.
     """
 )
 
 # Load the model
-with open('model/model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+with open('model.pkl', 'rb') as model_file:
+ pickle.load(model_file)
 
 # Streamlit interface to input data
 col1, col2 = st.columns(2)
