@@ -52,11 +52,11 @@ with col2:
 def prediction(air, process, rpm, torque, tool_wear, type):
     # Create a df with input data
     df_input = pd.DataFrame({
-        'Air temperature [K]': [air],
-        'Process temperature [k]': [process],
-        'Rotational speed [rpm]': [rpm],
-        'Torque [nm]': [torque],
-        'Tool wear [min]': [tool_wear],
+        'Air_temperature': [air],
+        'Process_temperature': [process],
+        'Rotational_speed': [rpm],
+        'Torque': [torque],
+        'Tool_wear': [tool_wear],
         'Type': [type]
     })
 
