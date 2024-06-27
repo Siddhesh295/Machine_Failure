@@ -1,5 +1,5 @@
 import os
-import joblib
+import pickle
 import streamlit as st
 import pandas as pd
 
@@ -24,17 +24,16 @@ st.markdown(
 st.write(f"Current working directory: {os.getcwd()}")
 
 # Check if the model file exists
-model_path = 'Model/best_model.pkl'
+model_path = 'Model/model (3).pkl'
 if not os.path.exists(model_path):
     st.error(f"Model file not found at path: {model_path}")
-    st.stop()
 
 # Load the model
 try:
-    model = joblib.load(model_path)
+    with open(model_path, 'rb') as file:
+        model = pickle.load(file)
 except Exception as e:
     st.error(f"Error loading model: {e}")
-    st.stop()
 
 # Streamlit interface to input data
 col1, col2 = st.columns(2)
@@ -67,11 +66,8 @@ def prediction(air, process, rpm, torque, tool_wear, type):
 # Button to predict
 if st.button('Predict'):
     if 'model' in locals():
-        try:
-            predict = prediction(air, process, rpm, torque, tool_wear, type)
-            st.success(predict)
-        except Exception as e:
-            st.error(f"Prediction error: {e}")
+        predict = prediction(air, process, rpm, torque, tool_wear, type)
+        st.success(predict)
     else:
         st.error("Model is not loaded. Please check the error messages above.")
 
