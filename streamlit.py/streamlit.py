@@ -67,7 +67,11 @@ def prediction(air, process, rpm, torque, tool_wear, type):
 # Button to predict
 if st.button('Predict'):
     if 'model' in locals():
-        predict = prediction(air, process, rpm, torque, tool_wear, type)
-        st.success(predict)
+        try:
+            predict = prediction(air, process, rpm, torque, tool_wear, type)
+            st.success(predict)
+        except Exception as e:
+            st.error(f"Prediction error: {e}")
     else:
         st.error("Model is not loaded. Please check the error messages above.")
+
