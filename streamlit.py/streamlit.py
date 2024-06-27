@@ -24,7 +24,7 @@ st.markdown(
 st.write(f"Current working directory: {os.getcwd()}")
 
 # Check if the model file exists
-model_path = 'Model'
+model_path = 'https://github.com/Siddhesh295/Machine_Failure/blob/7296e1d835ae9dc5e21d4fb60c1529e6f1fcd533/Model/model.pkl'
 if not os.path.exists(model_path):
     st.error(f"Model file not found at path: {model_path}")
     st.stop()
