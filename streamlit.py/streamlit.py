@@ -1,5 +1,7 @@
+
+
 import os
-import pickle
+import joblib
 import streamlit as st
 import pandas as pd
 
@@ -23,6 +25,7 @@ st.markdown(
 # Print current working directory
 st.write(f"Current working directory: {os.getcwd()}")
 
+
 # Check if the model file exists
 model_path = 'Model/model.pkl'
 if not os.path.exists(model_path):
@@ -30,8 +33,7 @@ if not os.path.exists(model_path):
 
 # Load the model
 try:
-    with open(model_path, 'rb') as file:
-        model = pickle.load(file)
+    model = joblib.load(model_path)
 except Exception as e:
     st.error(f"Error loading model: {e}")
 
