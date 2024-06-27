@@ -28,7 +28,7 @@ st.write(f"Current working directory: {os.getcwd()}")
 
 
 # Load the model
-model = joblib.load('Model/model.pkl')
+model_path = joblib.load('Model/model.pkl')
 
 # Check if the model file exists
 model_path = 'Model/model.pkl'
