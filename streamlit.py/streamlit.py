@@ -26,6 +26,10 @@ st.markdown(
 st.write(f"Current working directory: {os.getcwd()}")
 
 
+
+# Load the model
+model = joblib.load('Model/model.pkl')
+
 # Check if the model file exists
 model_path = 'Model/model.pkl'
 if not os.path.exists(model_path):
