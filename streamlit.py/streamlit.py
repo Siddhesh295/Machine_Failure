@@ -24,7 +24,7 @@ st.markdown(
 st.write(f"Current working directory: {os.getcwd()}")
 
 # Check if the model file exists
-model_path = 'Model/model (3).pkl'
+model_path = 'Model/model (4).pkl'
 if not os.path.exists(model_path):
     st.error(f"Model file not found at path: {model_path}")
 
