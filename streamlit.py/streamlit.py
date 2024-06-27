@@ -1,7 +1,7 @@
+import os
 import pickle
 import streamlit as st
 import pandas as pd
-
 
 # Page config
 st.set_page_config(
@@ -20,8 +20,20 @@ st.markdown(
     """
 )
 
+# Print current working directory
+st.write(f"Current working directory: {os.getcwd()}")
+
+# Check if the model file exists
+model_path = 'Model/model.pkl'
+if not os.path.exists(model_path):
+    st.error(f"Model file not found at path: {model_path}")
+
 # Load the model
-model = pickle.load(open('Model/model.pkl', 'rb'))
+try:
+    with open(model_path, 'rb') as file:
+        model = pickle.load(file)
+except Exception as e:
+    st.error(f"Error loading model: {e}")
 
 # Streamlit interface to input data
 col1, col2 = st.columns(2)
@@ -51,7 +63,10 @@ def prediction(air, process, rpm, torque, tool_wear, type):
     prediction = model.predict(df_input)
     return prediction
 
-# Botton to predict
+# Button to predict
 if st.button('Predict'):
-    predict = prediction(air, process, rpm, torque, tool_wear, type)
-    st.success(predict)
+    if 'model' in locals():
+        predict = prediction(air, process, rpm, torque, tool_wear, type)
+        st.success(predict)
+    else:
+        st.error("Model is not loaded. Please check the error messages above.")
