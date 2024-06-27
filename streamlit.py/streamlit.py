@@ -1,5 +1,3 @@
-
-
 import os
 import joblib
 import streamlit as st
@@ -25,21 +23,18 @@ st.markdown(
 # Print current working directory
 st.write(f"Current working directory: {os.getcwd()}")
 
-
-
-# Load the model
-model_path = joblib.load('Model/model.pkl')
-
 # Check if the model file exists
 model_path = 'Model/model.pkl'
 if not os.path.exists(model_path):
     st.error(f"Model file not found at path: {model_path}")
+    st.stop()
 
 # Load the model
 try:
     model = joblib.load(model_path)
 except Exception as e:
     st.error(f"Error loading model: {e}")
+    st.stop()
 
 # Streamlit interface to input data
 col1, col2 = st.columns(2)
