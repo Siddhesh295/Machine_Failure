@@ -1,4 +1,4 @@
-**Machine Failure Prediction**
+**MACHINE FAILURE PREDICTION**
 
 Welcome to the Machine Failure Prediction project repository! This project aims to predict machine failures using a combination of data analysis and machine learning techniques. By accurately predicting when a machine might fail, businesses can take proactive measures to maintain equipment, thereby reducing downtime and saving costs.
 
