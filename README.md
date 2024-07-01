@@ -5,14 +5,17 @@ Welcome to the Machine Failure Prediction project repository! This project aims 
 **Project Overview**
 
 Objective
+
 The primary objective of this project is to develop a predictive model that can identify potential machine failures before they occur. This will help in scheduling maintenance and reducing unexpected breakdowns.
 
 Dataset
+
 The dataset used for this project contains historical data on machine performance, including various operational metrics and failure records. The data has been collected from multiple sources to ensure a comprehensive analysis.
 
 **Methodology**
 
 Data Preprocessing
+
 Data Cleaning: Handling missing values, outliers, and erroneous data entries.
 Feature Engineering: Creating new features from existing data to improve model performance.
 Normalization: Scaling the data to ensure uniformity across features.
