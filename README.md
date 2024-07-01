@@ -35,7 +35,9 @@ Hyperparameter Tuning: Optimizing model parameters to improve predictive accurac
 **Technologies Used**
 
 Programming Language: Python
+
 Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+
 Tools: Jupyter Notebook, Git
 
 **Contributing**
